@@ -28,7 +28,7 @@ client.on('ready', () => {
 
 
 const adminprefix = "--";
-const devs = ['501091319045947413' , '488334414124810240'];
+const devs = ['501091319045947413'];
 client.on('message', message => {//for dev
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -72,7 +72,7 @@ client.on('message', message => {//restart
   client.on("message", message => {
   
               if (message.content.startsWith(prefix + "obc")) {
-                           if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+                           if (!message.member.guild) return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
     message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
