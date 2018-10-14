@@ -72,7 +72,7 @@ client.on('message', message => {//restart
   client.on("message", message => {
   
               if (message.content.startsWith(prefix + "obc")) {
-                           if (!message.member.guild) return;
+                           if (!message.member.get('501091319045947413')) return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
     message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
